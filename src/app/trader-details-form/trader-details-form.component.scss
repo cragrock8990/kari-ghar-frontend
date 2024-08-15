@@ -1,0 +1,28 @@
+.trader-dates {
+    display: flex;
+    flex-direction: row;
+  p-calendar {
+    margin-right: 300px;
+
+  }
+}
+
+.trader-details-input {
+  margin: 24px;
+
+  max-width: 320px;
+}
+
+.input-has-error {
+  color: #cc0000;
+  margin-left: 4px;
+}
+
+.input-error-msg {
+  display: none;
+  color: #cc0000;
+}
+
+.ng-invalid.ng-touched.ng-dirty + .input-error-msg {
+  display: block;
+}

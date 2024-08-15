@@ -1,0 +1,409 @@
+<div class="flex flex-col h-screen justify-between">
+  <div class="card flex justify-content-center">
+    <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+      <ng-template pTemplate="headless">
+        <div class="flex flex-column h-full">
+          <div
+            class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0"
+          >
+            <span class="inline-flex align-items-center gap-2">
+              <img class="w-[100px]" src="assets/images/blue-logo.svg" />
+              <!-- <svg width="33" height="35" viewBox="0 0 33 35" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="block mx-auto">
+                <path
+                  d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z"
+                  fill="var(--primary-color)" />
+                <mask id="mask0_1_36" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31"
+                  height="33">
+                  <path
+                    d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z"
+                    fill="var(--primary-color-text)" />
+                </mask>
+                <g mask="url(#mask0_1_36)">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.1935 0V3.5994V3.58318V20.0075V20.0075V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1935 0Z"
+                    fill="var(--primary-color)" />
+                </g>
+                <path
+                  d="M19.6399 15.3776L18.1861 15.0547L19.3169 16.6695V21.6755L23.1938 18.4458V12.9554L21.4169 13.6013L19.6399 15.3776Z"
+                  fill="var(--primary-color-text)" />
+                <path
+                  d="M10.5936 15.3776L12.0474 15.0547L10.9166 16.6695V21.6755L7.03966 18.4458V12.9554L8.81661 13.6013L10.5936 15.3776Z"
+                  fill="var(--primary-color-text)" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M11.3853 16.9726L12.6739 15.0309L13.4793 15.5163H16.7008L17.5061 15.0309L18.7947 16.9726V24.254L17.8283 25.7103L16.7008 26.843H13.4793L12.3518 25.7103L11.3853 24.254V16.9726Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M19.3168 24.7437L21.4168 22.6444V20.5451L19.3168 22.3214V24.7437Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M10.9166 24.7437L8.81662 22.6444V20.5451L10.9166 22.3214V24.7437Z"
+                  fill="var(--primary-color-text)" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13.0167 5.68861L11.7244 8.7568L13.8244 14.8932H14.7936V5.68861H13.0167ZM15.4397 5.68861V14.8932H16.5706L18.5091 8.7568L17.2167 5.68861H15.4397Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M13.8244 14.8932L6.87813 12.3094L5.90888 8.27235L11.8859 8.7568L13.9859 14.8932H13.8244Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M16.5706 14.8932L23.5169 12.3094L24.4861 8.27235L18.3476 8.7568L16.4091 14.8932H16.5706Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M18.8321 8.27235L22.2245 7.94938L19.9629 5.68861H17.7013L18.8321 8.27235Z"
+                  fill="var(--primary-color-text)" />
+                <path d="M11.4013 8.27235L8.00893 7.94938L10.2705 5.68861H12.5321L11.4013 8.27235Z"
+                  fill="var(--primary-color-text)" />
+              </svg> -->
+              <!-- <span class="font-semibold text-2xl text-primary">Your Logo</span> -->
+            </span>
+            <span>
+              <p-button
+                type="button"
+                (click)="closeCallback($event)"
+                icon="pi pi-times"
+                styleClass="h-2rem w-2rem"
+              ></p-button>
+            </span>
+          </div>
+          <div class="overflow-y-auto">
+            <ul class="list-none p-3 m-0">
+              <li>
+                <div
+                  pRipple
+                  pStyleClass="@next"
+                  enterClass="hidden"
+                  enterActiveClass="slidedown"
+                  leaveToClass="hidden"
+                  leaveActiveClass="slideup"
+                  class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple"
+                >
+                  <span class="font-medium">FAVORITES</span>
+                  <i class="pi pi-chevron-down"></i>
+                </div>
+                <ul class="list-none p-0 m-0 overflow-hidden">
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-home mr-2"></i>
+                      <span class="font-medium">Dashboard</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-bookmark mr-2"></i>
+                      <span class="font-medium">Bookmarks</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      pStyleClass="@next"
+                      enterClass="hidden"
+                      enterActiveClass="slidedown"
+                      leaveToClass="hidden"
+                      leaveActiveClass="slideup"
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-chart-line mr-2"></i>
+                      <span class="font-medium">Reports</span>
+                      <i class="pi pi-chevron-down ml-auto"></i>
+                    </a>
+                    <ul
+                      class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out"
+                    >
+                      <li>
+                        <a
+                          pRipple
+                          pStyleClass="@next"
+                          enterClass="hidden"
+                          enterActiveClass="slidedown"
+                          leaveToClass="hidden"
+                          leaveActiveClass="slideup"
+                          class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                        >
+                          <i class="pi pi-chart-line mr-2"></i>
+                          <span class="font-medium">Revenue</span>
+                          <i class="pi pi-chevron-down ml-auto"></i>
+                        </a>
+                        <ul
+                          class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out"
+                        >
+                          <li>
+                            <a
+                              pRipple
+                              class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                            >
+                              <i class="pi pi-table mr-2"></i>
+                              <span class="font-medium">View</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              pRipple
+                              class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                            >
+                              <i class="pi pi-search mr-2"></i>
+                              <span class="font-medium">Search</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a
+                          pRipple
+                          class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                        >
+                          <i class="pi pi-chart-line mr-2"></i>
+                          <span class="font-medium">Expenses</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-users mr-2"></i>
+                      <span class="font-medium">Team</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-comments mr-2"></i>
+                      <span class="font-medium">Messages</span>
+                      <span
+                        class="inline-flex align-items-center justify-content-center ml-auto bg-primary border-circle"
+                        style="min-width: 1.5rem; height: 1.5rem"
+                        >3</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-calendar mr-2"></i>
+                      <span class="font-medium">Calendar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-cog mr-2"></i>
+                      <span class="font-medium">Settings</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="list-none p-3 m-0">
+              <li>
+                <div
+                  pRipple
+                  pStyleClass="@next"
+                  enterClass="hidden"
+                  enterActiveClass="slidedown"
+                  leaveToClass="hidden"
+                  leaveActiveClass="slideup"
+                  class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple"
+                >
+                  <span class="font-medium">APPLICATION</span>
+                  <i class="pi pi-chevron-down"></i>
+                </div>
+                <ul class="list-none p-0 m-0 overflow-hidden">
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-folder mr-2"></i>
+                      <span class="font-medium">Projects</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-chart-bar mr-2"></i>
+                      <span class="font-medium">Performance</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      pRipple
+                      class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                    >
+                      <i class="pi pi-cog mr-2"></i>
+                      <span class="font-medium">Settings</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+            <a
+              pRipple
+              class="m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+            >
+              <p-avatar
+                image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                shape="circle"
+              />
+              <span class="font-bold">Amy Elsner</span>
+            </a>
+          </div>
+        </div>
+      </ng-template>
+    </p-sidebar>
+  </div>
+  <header
+    class="card flex flex-column p-[32px] pb-[48px] justify-content-between"
+  >
+    <div class="flex justify-content-between">
+      <p-button
+        size="large"
+        (click)="sidebarVisible = true"
+        [rounded]="true"
+        [text]="true"
+        icon="pi pi-bars text-white "
+        severity="info"
+      ></p-button>
+
+      <img class="w-[100px]" src="assets/images/white-logo.svg" />
+
+      <p-button
+        size="large"
+        icon="pi pi-user text-white"
+        [rounded]="true"
+        [text]="true"
+      ></p-button>
+    </div>
+
+    <!-- <h1>Find Trusted Tradesmen Near You with [App Name]</h1>
+          Your trusted local tradesmen app: Search and connect -->
+
+    <h1 class="my-[32px] text-center text-white">
+      Your trusted local tradesmen app
+    </h1>
+
+    <form
+      class="flex max-sm:flex-col justify-content-center align-items-center"
+      [formGroup]="formGroup"
+    >
+      <p-dropdown
+        class="max-sm:mb-[16px] sm:mr-[16px]"
+        formControlName="selectedCity"
+        [editable]="true"
+        [options]="cities"
+        optionLabel="name"
+        placeholder="City (e.g Islamabad)"
+      ></p-dropdown>
+      <p-dropdown
+        formControlName="selectedProfession"
+        [editable]="true"
+        [options]="professions"
+        optionLabel="name"
+        placeholder="Profession (e.g builder)"
+      ></p-dropdown>
+    </form>
+  </header>
+
+  <main class="mb-auto">
+    <router-outlet></router-outlet>
+    <!-- <div class="kg-container">
+      <div class="grid justify-content-center m-0">
+        <div
+          *ngFor="let currentProfession of professions"
+          class="col-6 sm:col-4 md:col-3 lg:col-2"
+        >
+          <div class="profession-tile flex flex-col align-items-center">
+            <img
+              class="w-4"
+              src="{{ 'assets/images/' + currentProfession.icon }}"
+            />
+            <p class="text-center mt-[12px]">{{ currentProfession.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- temporary commented out below -->
+    <!-- <app-tradesmen-data-list></app-tradesmen-data-list> -->
+
+    <div class="kg-container">
+      <h2 class="my-[32px] text-center">Frequently asked questions</h2>
+      <p-accordion [multiple]="true">
+        <p-accordionTab header="How to use the app?">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </p-accordionTab>
+        <p-accordionTab
+          header="Where can i get the contact numbers of the tradesmen?"
+        >
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci
+            velit, sed quia non numquam eius modi.
+          </p>
+        </p-accordionTab>
+        <p-accordionTab header="Contact us for help">
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
+            est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+            eligendi optio cumque nihil impedit quo minus.
+          </p>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </main>
+  <footer class="h-100">
+    <div class="kg-container">
+      <nav>
+        <ul class="grid m-0">
+          <li
+            class="col-6 sm:col-4 md:col-3 lg:col-2 text-white mb-[16px]"
+            *ngFor="let footerLink of footerLinks"
+          >
+            <a
+              [routerLink]="footerLink.href"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              >{{ footerLink.displayName }}</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <p-divider></p-divider>
+
+      <p class="text-white text-center mt-[28px]">
+        &copy; KariGhar Ltd 2024 &#8210; 2026
+      </p>
+    </div>
+  </footer>
+</div>

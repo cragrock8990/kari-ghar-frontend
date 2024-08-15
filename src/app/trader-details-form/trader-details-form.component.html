@@ -1,0 +1,220 @@
+<form
+  class="kg-container"
+  [formGroup]="traderDetailsFormGroup"
+  kgScrollToFirstFormError
+  (ngSubmit)="onTraderFormSubmit()"
+>
+  <h2>Register a new Trader</h2>
+  <p class="mt-[16px] mb-[32px]">
+    To register your trade insert all the required details
+  </p>
+
+  <div class="flex flex-column gap-2 trader-details-input">
+    <label for="fullNameInput">Full Name: </label>
+    <input
+      id="fullNameInput"
+      pInputText
+      type="text"
+      formControlName="fullName"
+    />
+    <small class="input-error-msg"
+      ><b>X</b> Enter your full name e.g Muhammad Ahmed</small
+    >
+  </div>
+
+  <div class="flex flex-column gap-2 trader-details-input">
+    <label for="companyNameInput">Company Name: </label>
+
+    <input
+      id="companyNameInput"
+      pInputText
+      type="text"
+      formControlName="companyName"
+    />
+  </div>
+
+  <div class="flex flex-column gap-2 trader-details-input">
+    <label for="contactNo1Input">Mobile Number: </label>
+
+    <input
+      id="contactNo1Input"
+      pInputText
+      type="text"
+      formControlName="contactNo1"
+    />
+
+    <small class="input-error-msg"
+      ><b>X</b> Enter a correct Mobile number</small
+    >
+  </div>
+
+  <div class="flex flex-column gap-2 trader-details-input">
+    <label for="contactNo2Input">Landline Number: </label>
+
+    <input
+      id="contactNo2Input"
+      pInputText
+      type="text"
+      formControlName="contactNo2"
+    />
+  </div>
+
+  <div formGroupName="address">
+    <h2>Address</h2>
+
+    <div class="flex flex-column gap-2 trader-details-input">
+      <label for="addressFirstLineInput">First Line Address: </label>
+
+      <input
+        id="addressFirstLineInput"
+        pInputText
+        type="text"
+        formControlName="firstLineAddress"
+      />
+      <small class="input-error-msg"
+        ><b>X</b> Enter first line of address e.g xyz constructions Street
+        2</small
+      >
+    </div>
+
+    <div class="flex flex-column gap-2 trader-details-input">
+      <label for="addressTownInput">Town / Village: </label>
+
+      <input
+        id="addressTownInput"
+        pInputText
+        type="text"
+        formControlName="town"
+      />
+      <small class="input-error-msg"
+        ><b>X</b> Enter your town or neared town or village e.g G10
+        markaz</small
+      >
+    </div>
+
+    <div class="flex flex-column gap-2 trader-details-input">
+      <label for="addressCityInput">City: </label>
+
+      <input
+        id="addressCityInput"
+        pInputText
+        type="text"
+        formControlName="city"
+      />
+      <small class="input-error-msg"
+        ><b>X</b> Enter your city e.g Islamabad</small
+      >
+    </div>
+  </div>
+
+  <div formArrayName="professions">
+    <div>
+      <h2>Professions</h2>
+      <div
+        class="card flex justify-content-center gap-3 flex-column trader-details-input"
+      >
+        <ng-container
+          *ngFor="
+            let professionGroupControl of professionsFormArray.controls;
+            let i = index
+          "
+        >
+          <div [formGroup]="professionGroupControl" class="flex flex-column">
+            <p-checkbox
+              inputId="{{ professionsList[i].code }} + 'Id'"
+              [label]="professionsList[i].name"
+              name="profession"
+              value="{{ professionsList[i].code }}"
+              [binary]="true"
+              (onChange)="
+                addProfession(professionsFormArray, professionsList[i].code)
+              "
+              formControlName="selected"
+            >
+            </p-checkbox>
+            <div>
+              <p>hello1</p>
+              <p>hello1</p>
+            </div>
+            <p-button
+              label="edit"
+              [outlined]="true"
+              severity="secondary"
+              (onClick)="editSkills()"
+            ></p-button>
+
+            <!-- <p-checkbox
+          [label]="profession.name"
+          name="profession"
+          [value]="profession.code"
+          (onChange)="addProfession(professionsFormArray,profession.code)"
+          [(ngModel)]="selectedProfessions"
+        ></p-checkbox> -->
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div formArrayName="skills">
+    <h2>Skills</h2>
+  </div> -->
+
+  <div formArrayName="services">
+    <h2>Services</h2>
+  </div>
+
+  <div class="flex flex-column gap-2 trader-details-input">
+    <label for="companyWebURLInput">Company Website URL: </label>
+
+    <input
+      id="companyWebURLInput"
+      pInputText
+      type="text"
+      formControlName="companyWebsiteUrl"
+    />
+  </div>
+  <button pButton pRipple label="Submit" type="submit"></button>
+
+  <div>{{ traderDetailsFormGroup.getRawValue() | json }}</div>
+</form>
+
+<p-dialog
+  [(visible)]="skillsDialogVisible"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  [closeOnEscape]="true"
+  [responsive]="true"
+  [closable]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+  <ng-template pTemplate="header">
+    <div class="inline-flex align-items-center justify-content-center gap-2">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/avatar/amyelsner.png"
+        shape="circle"
+      />
+      <span class="font-bold white-space-nowrap">Amy Elsner</span>
+    </div>
+  </ng-template>
+  <p class="m-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="skillsDialogVisible = false"
+      label="Ok"
+      pAutoFocus
+      [autofocus]="true"
+    ></p-button>
+  </ng-template>
+</p-dialog>

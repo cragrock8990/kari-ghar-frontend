@@ -1,0 +1,16 @@
+<div class="kg-container">
+    <div class="grid justify-content-center m-0">
+      <div
+        *ngFor="let currentProfession of professions"
+        class="col-6 sm:col-4 md:col-3 lg:col-2"
+      >
+        <div class="profession-tile flex flex-col align-items-center">
+          <img
+            class="w-4"
+            src="{{ 'assets/images/' + currentProfession.icon }}"
+          />
+          <p class="text-center mt-[12px]">{{ currentProfession.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

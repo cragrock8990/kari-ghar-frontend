@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="5.435 40.52 122.1947 62.1749" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Aclonica">@import url(https://fonts.googleapis.com/css2?family=Aclonica%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <text style="fill: rgb(255, 255, 255); font-family: Aclonica; font-size: 32px; paint-order: fill; stroke-linecap: square; stroke-linejoin: round; stroke-opacity: 0.64; white-space: pre;" transform="matrix(0.8626109957695007, 0, 0, 0.8444020748138428, 10.019349098205566, 5.498032093048096)" x="14.698" y="74.957" dx="0 0 0 0 -36.781" dy="0 0 0 0 31.949">KariGhar</text>
+  <rect x="90.497" y="61.266" width="20.624" height="10.695" style="fill: rgb(252, 252, 252); transform-origin: 101.401px 61.2605px;"/>
+  <rect x="107.976" y="49.432" width="4.25" height="9.201" style="fill: rgb(252, 252, 252); transform-origin: 101.401px 61.2608px;"/>
+  <path d="M 101.184 50.973 L 115.715 61.208 L 86.652 61.208 L 101.184 50.973 Z" style="fill: rgb(252, 252, 252); transform-origin: 101.401px 61.2614px;" bx:shape="triangle 86.652 50.973 29.063 10.235 0.5 0 1@1b9f3a9c"/>
+  <rect x="97.6" y="-72.055" width="6.209" height="6.678" style="fill: rgb(252, 252, 252); transform-origin: 101.401px -61.2595px;" transform="matrix(1, 0, 0, -1, -0.000002000004, 122.519088745116)"/>
+  <path style="fill-opacity: 0.19; stroke-width: 4px; stroke: rgb(255, 255, 255); fill: none;" d="M 37.6 96.948 L 5.495 96.985 L 5.435 40.74 L 116.711 40.52"/>
+</svg>
